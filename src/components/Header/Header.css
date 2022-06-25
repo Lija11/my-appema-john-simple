@@ -3,15 +3,6 @@ a{
 }
 
 
-
-#header img {
-    height: 80px;
-}
-
-#header .img {
-    text-align: center;
-}
-
 #header nav{
 line-height: 40px;
 background-color: #000;
@@ -25,3 +16,11 @@ background-color: #000;
 #header nav a:hover{
     background-color: gray;
 }
+
+#header img {
+    height: 80px;
+  }
+  
+  #header .img {
+    text-align: center;
+  }

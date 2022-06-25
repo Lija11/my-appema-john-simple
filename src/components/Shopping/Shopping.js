@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { addToDb, getDb } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import { fakeData } from '../Index/Index';
 import Product from '../Product/Product';
@@ -10,16 +11,22 @@ const Shopping = () => {
     const [cart, setCart] = useState([]);
 
     const handleAddProduct = (product) => {
-        console.log('add product', product)
         const newCart = [...cart, product]
         setCart(newCart);
+       const check = addToDb(product.key, 1);
+       console.log('it is check-part' ,check);
     }
 
     return (
         <div id='shopping'>
            <div className="product">
                 {
-                    product.map(pd => <Product addProduct = {handleAddProduct} productInfo = {pd}></Product>)
+                    product.map(pd => <Product
+                      showAddToCart = {true}
+                    key = {pd.key}
+                    addProduct = {handleAddProduct}
+                     productInfo = {pd}> 
+                     </Product>)
                 }
            </div>
            <div className="cart">
